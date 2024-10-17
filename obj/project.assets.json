@@ -19,6 +19,7 @@
       "packagesPath": "C:\\Users\\Birdh\\.nuget\\packages\\",
       "outputPath": "D:\\Projects\\My software\\Palimpsest\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "C:\\Users\\Birdh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
