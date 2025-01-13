@@ -1,0 +1,17 @@
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\bin\Debug\net8.0-windows\Palimpsest.exe
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\bin\Debug\net8.0-windows\Palimpsest.deps.json
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\bin\Debug\net8.0-windows\Palimpsest.runtimeconfig.json
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\bin\Debug\net8.0-windows\Palimpsest.dll
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\bin\Debug\net8.0-windows\Palimpsest.pdb
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.AssemblyInfoInputs.cache
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.AssemblyInfo.cs
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.csproj.CoreCompileInputs.cache
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.sourcelink.json
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.dll
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\refint\Palimpsest.dll
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.pdb
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.genruntimeconfig.cache
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\ref\Palimpsest.dll
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.Palimpsest.resources
+D:\Projects\My software\Palimpsest\Palimpsest\Palimpsest\obj\Debug\net8.0-windows\Palimpsest.csproj.GenerateResource.cache
