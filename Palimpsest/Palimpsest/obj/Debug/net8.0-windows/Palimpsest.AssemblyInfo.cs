@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Palimpsest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+148118193bcbbd313a91a6297332d3edafb01955")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e24a9ac5bb8b3a0e5450208621a27e3bc2065c6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Palimpsest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Palimpsest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
