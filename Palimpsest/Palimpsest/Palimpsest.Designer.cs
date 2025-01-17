@@ -25,171 +25,167 @@ partial class Palimpsest {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-        label1 = new System.Windows.Forms.Label();
-        label2 = new System.Windows.Forms.Label();
-        inputpathdir = new System.Windows.Forms.TextBox();
-        outputpathdir = new System.Windows.Forms.TextBox();
         filesettings = new System.Windows.Forms.GroupBox();
-        label3 = new System.Windows.Forms.Label();
-        textBox3 = new System.Windows.Forms.TextBox();
+        selectedfiletb = new System.Windows.Forms.TextBox();
+        fileselectbutton = new System.Windows.Forms.Button();
         groupBox1 = new System.Windows.Forms.GroupBox();
-        lastgroup = new System.Windows.Forms.GroupBox();
-        encryptbutton = new System.Windows.Forms.Button();
+        keyvalue = new System.Windows.Forms.TextBox();
+        keyoption = new System.Windows.Forms.CheckBox();
+        encryptradio = new System.Windows.Forms.RadioButton();
+        decryptradio = new System.Windows.Forms.RadioButton();
+        gobutton = new System.Windows.Forms.Button();
+        saveFileDialog = new System.Windows.Forms.SaveFileDialog();
         filesettings.SuspendLayout();
-        lastgroup.SuspendLayout();
+        groupBox1.SuspendLayout();
         SuspendLayout();
-        //
-        // label1
-        //
-        label1.Location = new System.Drawing.Point(43, 43);
-        label1.Margin = new System.Windows.Forms.Padding(46, 0, 46, 0);
-        label1.Name = "label1";
-        label1.Size = new System.Drawing.Size(124, 50);
-        label1.TabIndex = 0;
-        label1.Text = "Input Path (file or folder)";
-        label1.Click += label1_Click_1;
-        //
-        // label2
-        //
-        label2.Location = new System.Drawing.Point(43, 134);
-        label2.Margin = new System.Windows.Forms.Padding(46, 0, 46, 0);
-        label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(124, 27);
-        label2.TabIndex = 1;
-        label2.Text = "Output Path";
-        //
-        // inputpathdir
-        //
-        inputpathdir.Location = new System.Drawing.Point(202, 40);
-        inputpathdir.Margin = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        inputpathdir.Name = "inputpathdir";
-        inputpathdir.Size = new System.Drawing.Size(405, 26);
-        inputpathdir.TabIndex = 3;
-        //
-        // outputpathdir
-        //
-        outputpathdir.Location = new System.Drawing.Point(202, 131);
-        outputpathdir.Margin = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        outputpathdir.Name = "outputpathdir";
-        outputpathdir.Size = new System.Drawing.Size(405, 26);
-        outputpathdir.TabIndex = 4;
-        //
+        // 
         // filesettings
-        //
+        // 
         filesettings.BackColor = System.Drawing.SystemColors.MenuBar;
-        filesettings.Controls.Add(label3);
-        filesettings.Controls.Add(textBox3);
-        filesettings.Controls.Add(outputpathdir);
-        filesettings.Controls.Add(label1);
-        filesettings.Controls.Add(label2);
-        filesettings.Controls.Add(inputpathdir);
-        filesettings.Location = new System.Drawing.Point(44, 33);
-        filesettings.Margin = new System.Windows.Forms.Padding(46, 24, 46, 24);
+        filesettings.Controls.Add(selectedfiletb);
+        filesettings.Controls.Add(fileselectbutton);
+        filesettings.Location = new System.Drawing.Point(19, 33);
+        filesettings.Margin = new System.Windows.Forms.Padding(162, 140, 162, 140);
         filesettings.Name = "filesettings";
-        filesettings.Padding = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        filesettings.Size = new System.Drawing.Size(859, 207);
+        filesettings.Padding = new System.Windows.Forms.Padding(162, 140, 162, 140);
+        filesettings.Size = new System.Drawing.Size(427, 82);
         filesettings.TabIndex = 6;
         filesettings.TabStop = false;
         filesettings.Text = "File Settings";
-        //
-        // label3
-        //
-        label3.Location = new System.Drawing.Point(661, 40);
-        label3.Margin = new System.Windows.Forms.Padding(22, 0, 22, 0);
-        label3.Name = "label3";
-        label3.Size = new System.Drawing.Size(150, 39);
-        label3.TabIndex = 6;
-        label3.Text = "Extention";
-        label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        label3.Click += label3_Click;
-        //
-        // textBox3
-        //
-        textBox3.Location = new System.Drawing.Point(661, 128);
-        textBox3.Margin = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        textBox3.Name = "textBox3";
-        textBox3.Size = new System.Drawing.Size(150, 26);
-        textBox3.TabIndex = 5;
-        textBox3.Text = ".txt";
-        //
+        // 
+        // selectedfiletb
+        // 
+        selectedfiletb.Location = new System.Drawing.Point(138, 35);
+        selectedfiletb.Margin = new System.Windows.Forms.Padding(5);
+        selectedfiletb.Name = "selectedfiletb";
+        selectedfiletb.Size = new System.Drawing.Size(268, 22);
+        selectedfiletb.TabIndex = 3;
+        // 
+        // fileselectbutton
+        // 
+        fileselectbutton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        fileselectbutton.Location = new System.Drawing.Point(27, 35);
+        fileselectbutton.Margin = new System.Windows.Forms.Padding(6);
+        fileselectbutton.Name = "fileselectbutton";
+        fileselectbutton.Size = new System.Drawing.Size(100, 22);
+        fileselectbutton.TabIndex = 2;
+        fileselectbutton.Text = "Select File";
+        fileselectbutton.UseVisualStyleBackColor = true;
+        fileselectbutton.Click += fileselectbutton_Click;
+        // 
         // groupBox1
-        //
+        // 
         groupBox1.BackColor = System.Drawing.SystemColors.MenuBar;
-        groupBox1.Location = new System.Drawing.Point(44, 257);
-        groupBox1.Margin = new System.Windows.Forms.Padding(46, 24, 46, 24);
+        groupBox1.Controls.Add(keyvalue);
+        groupBox1.Controls.Add(decryptradio);
+        groupBox1.Controls.Add(keyoption);
+        groupBox1.Controls.Add(encryptradio);
+        groupBox1.Location = new System.Drawing.Point(19, 133);
+        groupBox1.Margin = new System.Windows.Forms.Padding(162, 140, 162, 140);
         groupBox1.Name = "groupBox1";
-        groupBox1.Padding = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        groupBox1.Size = new System.Drawing.Size(607, 272);
+        groupBox1.Padding = new System.Windows.Forms.Padding(162, 140, 162, 140);
+        groupBox1.Size = new System.Drawing.Size(231, 137);
         groupBox1.TabIndex = 7;
         groupBox1.TabStop = false;
         groupBox1.Text = "Encryption and Decryption";
-        //
-        // lastgroup
-        //
-        lastgroup.BackColor = System.Drawing.SystemColors.MenuBar;
-        lastgroup.Controls.Add(encryptbutton);
-        lastgroup.Location = new System.Drawing.Point(680, 257);
-        lastgroup.Margin = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        lastgroup.Name = "lastgroup";
-        lastgroup.Padding = new System.Windows.Forms.Padding(46, 24, 46, 24);
-        lastgroup.Size = new System.Drawing.Size(223, 272);
-        lastgroup.TabIndex = 8;
-        lastgroup.TabStop = false;
-        lastgroup.Text = "Last Step";
-        //
-        // encryptbutton
-        //
-        encryptbutton.Location = new System.Drawing.Point(25, 206);
-        encryptbutton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-        encryptbutton.Name = "encryptbutton";
-        encryptbutton.Size = new System.Drawing.Size(154, 35);
-        encryptbutton.TabIndex = 1;
-        encryptbutton.Text = "Encrypt";
-        encryptbutton.UseVisualStyleBackColor = true;
-        encryptbutton.Click += encryptbutton_Click;
-        //
+        // 
+        // keyvalue
+        // 
+        keyvalue.Location = new System.Drawing.Point(80, 34);
+        keyvalue.Name = "keyvalue";
+        keyvalue.Size = new System.Drawing.Size(138, 22);
+        keyvalue.TabIndex = 6;
+        // 
+        // keyoption
+        // 
+        keyoption.Location = new System.Drawing.Point(11, 34);
+        keyoption.Name = "keyoption";
+        keyoption.Size = new System.Drawing.Size(122, 22);
+        keyoption.TabIndex = 4;
+        keyoption.Text = "Key";
+        keyoption.UseVisualStyleBackColor = true;
+        keyoption.CheckedChanged += offsetoption_CheckedChanged;
+        // 
+        // encryptradio
+        // 
+        encryptradio.Location = new System.Drawing.Point(27, 76);
+        encryptradio.Name = "encryptradio";
+        encryptradio.Size = new System.Drawing.Size(79, 34);
+        encryptradio.TabIndex = 4;
+        encryptradio.TabStop = true;
+        encryptradio.Text = "Encrypt";
+        encryptradio.UseVisualStyleBackColor = true;
+        encryptradio.CheckedChanged += encryptradio_CheckedChanged;
+        // 
+        // decryptradio
+        // 
+        decryptradio.Location = new System.Drawing.Point(128, 76);
+        decryptradio.Name = "decryptradio";
+        decryptradio.Size = new System.Drawing.Size(71, 34);
+        decryptradio.TabIndex = 5;
+        decryptradio.TabStop = true;
+        decryptradio.Text = "Decrypt";
+        decryptradio.UseVisualStyleBackColor = true;
+        decryptradio.CheckedChanged += decryptradio_CheckedChanged;
+        // 
+        // gobutton
+        // 
+        gobutton.Location = new System.Drawing.Point(279, 195);
+        gobutton.Name = "gobutton";
+        gobutton.Size = new System.Drawing.Size(146, 62);
+        gobutton.TabIndex = 6;
+        gobutton.Text = "Start";
+        gobutton.UseVisualStyleBackColor = true;
+        gobutton.Click += Begin;
+        // 
+        // saveFileDialog
+        // 
+        saveFileDialog.FileName = "output";
+        saveFileDialog.Filter = "Text File|*.txt";
+        // 
         // Palimpsest
-        //
-        AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+        // 
+        AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.Window;
         BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-        ClientSize = new System.Drawing.Size(944, 541);
-        Controls.Add(lastgroup);
+        ClientSize = new System.Drawing.Size(469, 295);
+        Controls.Add(gobutton);
         Controls.Add(groupBox1);
         Controls.Add(filesettings);
-        Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
         HelpButton = true;
-        Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+        Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
         RightToLeft = System.Windows.Forms.RightToLeft.No;
         StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         Text = "Palimpsest";
         filesettings.ResumeLayout(false);
         filesettings.PerformLayout();
-        lastgroup.ResumeLayout(false);
+        groupBox1.ResumeLayout(false);
+        groupBox1.PerformLayout();
         ResumeLayout(false);
     }
 
-    private System.Windows.Forms.Button encryptbutton;
+    private System.Windows.Forms.SaveFileDialog saveFileDialog;
 
-    private System.Windows.Forms.GroupBox lastgroup;
+    private System.Windows.Forms.CheckBox keyoption;
+    private System.Windows.Forms.Button gobutton;
 
-    private System.Windows.Forms.TextBox textBox3;
-    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.RadioButton encryptradio;
+    private System.Windows.Forms.RadioButton decryptradio;
+
+    private System.Windows.Forms.TextBox selectedfiletb;
+
+    private System.Windows.Forms.TextBox keyvalue;
+
+    private System.Windows.Forms.Button fileselectbutton;
 
     private System.Windows.Forms.GroupBox groupBox1;
 
     private System.Windows.Forms.GroupBox filesettings;
 
     private System.Windows.Forms.Panel panel1;
-
-    private System.Windows.Forms.TextBox inputpathdir;
-    private System.Windows.Forms.TextBox outputpathdir;
-
-    private System.Windows.Forms.Label label2;
-
-    private System.Windows.Forms.Label label1;
 
     #endregion
 }

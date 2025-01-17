@@ -1,6 +1,11 @@
+using System.Text;
+
 namespace Palimpsest;
 
 public partial class Palimpsest : Form {
+
+    private String SelectedFile = "";
+
     public Palimpsest() {
         InitializeComponent();
     }
@@ -26,23 +31,72 @@ public partial class Palimpsest : Form {
     }
 
     private void radioButton1_CheckedChanged(object sender, EventArgs e) {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
-    private void button1_Click(object sender, EventArgs e) {
-        throw new System.NotImplementedException();
+    private void decryptradio_CheckedChanged(object sender, EventArgs e) {
+
     }
 
-    private void encryptbutton_Click(object sender, EventArgs e) {
+    private void fileselectbutton_Click(object sender, EventArgs e) {
 
-        string inputdir = inputpathdir.Text;
-        string outputdir = outputpathdir.Text;
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        openFileDialog.Title = "Select a file";
+        //openFileDialog.InitialDirectory = "c:\\";
+        openFileDialog.Filter = "All files (*.*)|*.*";
+        openFileDialog.FilterIndex = 1;
+        openFileDialog.ShowDialog();
+        if (openFileDialog.FileName != "") {
+            selectedfiletb.Text = openFileDialog.FileName;
+            SelectedFile = openFileDialog.FileName;
+        }
+        else {
+        }
+    }
 
-        Methods method = new Methods();
+    private void WritetoFile(String dir, String output) {
 
-        method.BeginEncryption(inputdir, outputdir, 1);
+        using (Stream s = File.Open(dir, FileMode.Create))
+        using (StreamWriter sw = new StreamWriter(s)) {
+            sw.Write(output);
+        }
+
+    }
 
 
+    private void Begin(object sender, EventArgs e) {
 
+        if (encryptradio.Checked) {
+            saveFileDialog.Filter = "Encrypted File Format|*.palm";
+        }
+
+
+        if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+
+
+            if (decryptradio.Checked) {
+
+                String tmp = Methods.BeginDecryption(SelectedFile, int.Parse(keyvalue.Text), true);
+                WritetoFile(saveFileDialog.FileName, tmp);
+
+
+            }
+
+            if (encryptradio.Checked) {
+
+                String tmp = Methods.BeginEncryption(SelectedFile, int.Parse(keyvalue.Text), true);
+                WritetoFile(saveFileDialog.FileName, tmp);
+
+            }
+
+        }
+    }
+
+    private void offsetoption_CheckedChanged(object sender, EventArgs e) {
+        //throw new System.NotImplementedException();
+    }
+
+    private void encryptradio_CheckedChanged(object sender, EventArgs e) {
+        //throw new System.NotImplementedException();
     }
 }
