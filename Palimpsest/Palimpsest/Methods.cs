@@ -119,16 +119,21 @@ public class Methods {
         return output;
     }
 
-    private static String Encrypt(String dir, String key) {
+    public static String Encrypt(String dir, String key) {
 
         String output = "";
 
         String readText = File.ReadAllText(dir);
 
-        foreach (String s in middlestep(readText, key)) {
-            output += s;
-        }
+        String[] s = middlestep(readText, key);
 
+        int[] order = Ordering(key);
+
+        for (int i = 0; i < key.Length; i++) {
+
+            output += s[order[i]];
+
+        }
 
         return output;
     }
@@ -143,19 +148,48 @@ public class Methods {
 
         for (int i = 0; i < input.Length; i++) {
 
-
             output[tick] += input[i];
 
 
             tick = (tick + 1) % key.Length;
         }
 
+        return output;
+    }
 
+    private static int[] Ordering(String key) {
+
+        int[] output = new int[key.Length];
+
+        List<Char> chars = key.ToCharArray().ToList();
+
+        for (int i = 0; i < chars.Count; i++) {
+
+            int l = Currentlowest(chars.ToArray());
+            output[i] = l;
+            chars.RemoveAt(l);
+
+        }
 
 
         return output;
     }
 
+    private static int Currentlowest(Char[] input) {
+
+        int lowest = 0;
+
+        for (int i = 0; i < input.Length; i++) {
+
+            if (input[i] < lowest) {
+                lowest = input[i];
+            }
+
+
+        }
+
+        return lowest;
+    }
 
 
 

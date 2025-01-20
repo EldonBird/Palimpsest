@@ -84,7 +84,7 @@ public partial class Palimpsest : Form {
 
             if (encryptradio.Checked) {
 
-                String tmp = Methods.BeginEncryption(SelectedFile, int.Parse(keyvalue.Text), true);
+                String tmp = Methods.Encrypt(SelectedFile, "Temp");
                 WritetoFile(saveFileDialog.FileName, tmp);
 
             }
