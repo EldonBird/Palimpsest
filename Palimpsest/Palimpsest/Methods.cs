@@ -73,118 +73,62 @@ public class Methods {
     }
 
     public static String RotationEncrypt(String input, int offset) {
-        return OffsetEncrypt(input, offset);
+        return OffsetEncrypt(input, offset + 90);
     }
 
     public static String RotationDecrypt(String input, int offset) {
-        return OffsetDecrypt(input, offset);
+        return OffsetDecrypt(input, offset + 90);
     }
 
 
-    public static String BeginEncryption(String startDir, int offset, bool rotation) {
-
-        String readText = File.ReadAllText(startDir);
-
-        if (rotation) {
-            return RotationEncrypt(readText, offset);
-        }
-
-        return OffsetEncrypt(readText, offset);
-
-
-
-    }
-
-    public static String BeginDecryption(String startDir, int offset, bool rotation) {
-
-        String readText = File.ReadAllText(startDir);
-
-        if (rotation) {
-            return RotationDecrypt(readText, offset);
-        }
-
-        return OffsetDecrypt(readText, offset);
-
-    }
-
-    private static String Decrypt(String dir, String key) {
+    public static String Decrypt(String dir, String key) {
 
         String output = "";
 
         String ReadText = File.ReadAllText(dir);
 
 
-
-
-        return output;
+        return OffsetDecrypt(ReadText, int.Parse(key));
     }
 
+    // the over all call so that I only have one public statement for both encryption and decryption
     public static String Encrypt(String dir, String key) {
 
         String output = "";
 
         String readText = File.ReadAllText(dir);
 
-        String[] s = middlestep(readText, key);
 
-        int[] order = Ordering(key);
-
-        for (int i = 0; i < key.Length; i++) {
-
-            output += s[order[i]];
-
-        }
-
-        return output;
+        return OffsetEncrypt(readText, int.Parse(key));
     }
 
 
+    // is the middle step in dividing up the initial file(String) input in a way that is humanly digestible
     private static String[] middlestep(String input, String key) {
-        String[] output;
 
-        output = new String[key.Length];
-
-        int tick = 0;
+        String[] output = new String[input.Length];
 
         for (int i = 0; i < input.Length; i++) {
 
-            output[tick] += input[i];
-
-
-            tick = (tick + 1) % key.Length;
-        }
-
-        return output;
-    }
-
-    private static int[] Ordering(String key) {
-
-        int[] output = new int[key.Length];
-
-        List<Char> chars = key.ToCharArray().ToList();
-
-        for (int i = 0; i < chars.Count; i++) {
-
-            int l = Currentlowest(chars.ToArray());
-            output[i] = l;
-            chars.RemoveAt(l);
+            output[(i + 1) % key.Length] += input[i];
 
         }
 
-
         return output;
+
     }
 
-    private static int Currentlowest(Char[] input) {
+
+    // returns the index of the lowest char in the string
+    private static int lowest(String key) {
 
         int lowest = 0;
 
-        for (int i = 0; i < input.Length; i++) {
+        for (int i = 1; i < key.Length; i++) {
 
-            if (input[i] < lowest) {
-                lowest = input[i];
+            if (GetCharacterIndex(key[i]) < GetCharacterIndex(key[lowest])) {
+                lowest = i;
             }
-
 
         }
 
@@ -192,9 +136,28 @@ public class Methods {
     }
 
 
+    private static String[] permutation(String input, String key) {
 
+        List<Char> keylist = key.ToCharArray().ToList();
 
+        String[] output = new String[key.Length];
 
+        String[] middle = middlestep(input, key);
+
+        for (int i = 0; i < key.Length; i++) {
+
+            if (keylist.Count < 1) {
+                continue;
+            }
+
+            int low = lowest(keylist.ToString());
+
+            output[i] = middle[low];
+            keylist.RemoveAt(low);
+
+        }
+        return output;
+    }
 
 
 

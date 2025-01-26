@@ -38,6 +38,8 @@ public partial class Palimpsest : Form {
 
     }
 
+
+    // the function to open the file selection screen
     private void fileselectbutton_Click(object sender, EventArgs e) {
 
         OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -54,6 +56,8 @@ public partial class Palimpsest : Form {
         }
     }
 
+
+    // outputs to a file
     private void WritetoFile(String dir, String output) {
 
         using (Stream s = File.Open(dir, FileMode.Create))
@@ -64,6 +68,7 @@ public partial class Palimpsest : Form {
     }
 
 
+    // this function is what happens when the Start button is pressed
     private void Begin(object sender, EventArgs e) {
 
         if (encryptradio.Checked) {
@@ -76,7 +81,7 @@ public partial class Palimpsest : Form {
 
             if (decryptradio.Checked) {
 
-                String tmp = Methods.BeginDecryption(SelectedFile, int.Parse(keyvalue.Text), true);
+                String tmp = Methods.Decrypt(SelectedFile, keyvalue.Text);
                 WritetoFile(saveFileDialog.FileName, tmp);
 
 
@@ -84,7 +89,7 @@ public partial class Palimpsest : Form {
 
             if (encryptradio.Checked) {
 
-                String tmp = Methods.Encrypt(SelectedFile, "Temp");
+                String tmp = Methods.Encrypt(SelectedFile, keyvalue.Text);
                 WritetoFile(saveFileDialog.FileName, tmp);
 
             }
