@@ -2,7 +2,7 @@
 
 This project is a C# based encryption exploration. The goal of this project was to try to understand basic cryptography and create a program that could be used to encrypt and decrypt files. Part of my project was creating an actual functional UI, which is mostly left undone for most of my projects.
 
-[Video](https://www.youtube.com/watch?v=AnBMCIVtEGc)
+[Video](https://www.youtube.com/watch?v=gKMs8hDBFJs)
 ---
 # Development Environment
 
