@@ -10,7 +10,7 @@ This project was again coded in C# in Rider, I mainly chose these as my project 
 ---
 # Useful Websites and Resources
 
-- chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.nku.edu/~christensen/1402%20permutation%20ciphers.pdf
+- https://www.nku.edu/~christensen/1402%20permutation%20ciphers.pdf
 - https://www.youtube.com/watch?v=jjULFmdUczM
 - https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm
 - https://www.programmingalgorithms.com/algorithm/transposition-cipher/
