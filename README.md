@@ -10,15 +10,12 @@ This project was again coded in C# in Rider, I mainly chose these as my project 
 ---
 # Useful Websites and Resources
 
-- https://www.nku.edu/~christensen/1402%20permutation%20ciphers.pdf
-- https://www.youtube.com/watch?v=jjULFmdUczM
-- https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm
-- https://www.programmingalgorithms.com/algorithm/transposition-cipher/
-- http://www.crypto-it.net/eng/simple/transposition-ciphers.html
-- https://learn.microsoft.com/en-us/dotnet/standard/security/encrypting-data
+- [https://www.nku.edu/~christensen/1402%20permutation%20ciphers.pdf](https://croakingkero.com/tutorials/load_wav/)
+- [https://www.youtube.com/watch?v=jjULFmdUczM](http://soundfile.sapp.org/doc/WaveFormat/)
+
 
 ---
 # Future Ideas
 
- - Create an Icon and better UI designs.
- - Vectorized Encryption
+ - Audio Visualization using SDL
+ - More audio formats
